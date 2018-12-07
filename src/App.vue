@@ -1,17 +1,26 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+    <transition :name="transitionName">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
+import Index from "./pages/home/Index.vue";
 
 export default {
+  data () {
+    return {
+      transitionName: "forward"
+    };
+  },
   name: "app",
   components: {
-    HelloWorld
+    // HelloWorld
+    Index
   }
 };
 </script>
